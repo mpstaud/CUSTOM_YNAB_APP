@@ -47,7 +47,7 @@ def get_budgets():
 
 @app.route('/categories', methods=["GET"])
 def get_categories():
-    response = requests.get(f"{YNAB_BASE_URL}/budgets/{BUDGET_ID}/categories")
+    response = requests.get(f"{YNAB_BASE_URL}/budgets/{BUDGET_ID}/categories", headers=headers)
     data = response.json()
     return jsonify(data)
 
